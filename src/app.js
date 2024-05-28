@@ -3,8 +3,9 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import path from 'path'
-import routes from './routes'
+import routes from './router'
 import dotenv from 'dotenv'
+import router from './router'
 
 dotenv.config()
 class App {
@@ -25,7 +26,7 @@ class App {
     }
 
     routes() {
-        this.server.use(routes)
+        this.server.use(router)
     }
 }
 
